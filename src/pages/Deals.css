@@ -1,0 +1,95 @@
+/* --- Ofertas, grade de jogos e estados da página --- */
+.deals-page {
+  width: min(100% - 48px, 1280px);
+  padding: 48px 0 72px;
+  margin: 0 auto;
+}
+
+.deals-page__heading {
+  margin-bottom: 28px;
+}
+
+.deals-page__eyebrow {
+  color: var(--color-highlight);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.deals-page__heading h1 {
+  margin-top: 8px;
+  color: var(--color-text);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.deals-page__heading p {
+  margin-top: 10px;
+  color: var(--color-text-secondary);
+}
+
+.deals-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  align-items: start;
+  gap: 1.25rem;
+}
+
+.deals-page__status,
+.deals-page__empty {
+  display: flex;
+  min-height: 300px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--color-highlight);
+}
+
+.deals-page__empty {
+  flex-direction: column;
+  padding: 32px 20px;
+  border: 1px dashed var(--color-border);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.deals-page__empty h2 {
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+}
+
+.deals-page__empty p {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.deals-page__spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgb(139 92 246 / 25%);
+  border-top-color: var(--color-highlight);
+  border-radius: 50%;
+  animation: deals-page-spin 0.8s linear infinite;
+}
+
+@keyframes deals-page-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .deals-page {
+    width: calc(100% - 32px);
+    padding: 32px 0 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deals-page__spinner {
+    animation-duration: 2s;
+  }
+}

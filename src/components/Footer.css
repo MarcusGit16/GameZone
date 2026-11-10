@@ -1,0 +1,114 @@
+/* --- Rodapé e navegação complementar --- */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  background-color: var(--color-background-secondary);
+  font-family: var(--font-body);
+}
+
+.site-footer__content {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1fr 1.2fr;
+  gap: 40px;
+  width: min(100% - 48px, 1280px);
+  padding: 48px 0 40px;
+  margin: 0 auto;
+}
+
+.site-footer__brand,
+.site-footer__column,
+.site-footer__legal {
+  min-width: 0;
+}
+
+.site-footer__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.site-footer__logo > svg {
+  color: var(--color-primary);
+}
+
+.site-footer__logo-accent {
+  color: var(--color-highlight);
+}
+
+.site-footer__brand > p,
+.site-footer__legal > p {
+  max-width: 310px;
+  margin-top: 14px;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.site-footer__column h2,
+.site-footer__legal h2 {
+  margin: 2px 0 16px;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.site-footer__column ul {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.site-footer__column a {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  transition: color var(--transition-interactive);
+}
+
+.site-footer__column a:hover {
+  color: var(--color-primary);
+}
+
+.site-footer__support {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  color: var(--color-highlight);
+}
+
+.site-footer__bottom {
+  padding: 16px 24px;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.site-footer__bottom p {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .site-footer__content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px 48px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-footer__content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    width: calc(100% - 40px);
+    padding: 36px 0;
+  }
+
+  .site-footer__brand > p,
+  .site-footer__legal > p {
+    max-width: 100%;
+  }
+}
